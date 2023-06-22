@@ -1,0 +1,30 @@
+/* sweealert-custom.css */
+
+/* Custom styles for the SweetAlert dialog */
+.swal2-popup {
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  
+  .swal2-title {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .swal2-content {
+    color: #220e0e;
+  }
+  
+  .swal2-confirm {
+    background-color: #282731;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .swal2-popup .swal2-confirm.login-button {
+    /* Your custom styles for the login button */
+    background-color: #d4cccb;
+    color: #fff;
+  }
+  
