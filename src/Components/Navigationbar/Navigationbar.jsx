@@ -20,11 +20,17 @@ const Navigationbar = () => {
     <div className="">
       <div className="navbar bg-red-700">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-white text-3xl font-mono">
+          <a className="btn btn-ghost normal-case text-white text-3xl font-mono hidden md:block">
             Grocery Store
           </a>
-          <div className="flex-1 flex justify-center items-center">
-            <div className="form-control w-full h-9  mx-auto">
+
+          <NavLink to="/">
+            <a className="btn btn-ghost normal-case text-white text-3xl font-mono md:hidden">
+              GS
+            </a>
+          </NavLink>
+          <div className="flex-1 flex justify-center items-center pb-4">
+            <div className="form-control w-full h-9  mx-auto hidden md:block">
               <input
                 type="text"
                 placeholder="Search"
@@ -34,7 +40,10 @@ const Navigationbar = () => {
           </div>
         </div>
         <div>
-          <NavLink to="/" className="text-white font-semibold me-4 text-xl">
+          <NavLink
+            to="/"
+            className="text-white font-semibold me-4 text-xl hidden md:block"
+          >
             Home
           </NavLink>
           {!user ? (
@@ -71,7 +80,7 @@ const Navigationbar = () => {
                 </span>
               </div>
             </label>
-            <div className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+            <div className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow flex justify-center items-center" >
               <div className="card-body">
                 <span className="font-bold text-lg">Items: {cart?.length}</span>
                 <span className="text-green-600 font-bold text-xl">
@@ -79,7 +88,7 @@ const Navigationbar = () => {
                 </span>
                 <div className="card-actions">
                   <NavLink to="/cart">
-                    <button className="btn btn-primary btn-block">
+                    <button className="btn btn-primary btn-block ">
                       View cart
                     </button>
                   </NavLink>
@@ -91,7 +100,11 @@ const Navigationbar = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full flex justify-center items-center">
                 {user ? (
-                  <img src={user.photoURL} alt="Avatar" />
+                  <img
+                    title={user.displayName}
+                    src={user.photoURL}
+                    alt="Avatar"
+                  />
                 ) : (
                   <FaUserCircle className="text-4xl" />
                 )}

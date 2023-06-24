@@ -1,22 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-      "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}",
-    ],
-    theme: {
-      extend: {},
-      
-    },
-    plugins: [require("daisyui")],
-    daisyui: {
-      styled: true,
-      themes: "",
-      base: true,
-      utils: true,
-      logs: true,
-      rtl: false,
-      prefix: "",
-      darkTheme: "",
-    },
-  }
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("daisyui")],
+  daisyui: {
+    styled: true,
+    themes: "",
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "['light']",
+  },
+};
