@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import useCart from "../Hooks/useCart";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import "./Cart.css";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
   const total = cart.reduce((sum, item) => item.price + sum, 0).toFixed(2);
+  const [deletingItemId, setDeletingItemId] = useState(null);
 
   const handleDelete = (item) => {
+    setDeletingItemId(item._id);
+
     fetch(`http://localhost:5000/cart/${item._id}`, {
       method: "DELETE",
     })
@@ -15,28 +20,46 @@ const Cart = () => {
       .then((data) => {
         if (data.deletedCount > 0) {
           refetch();
+          setDeletingItemId(null);
         }
       });
   };
 
   const handleClearCart = () => {
-    const deletePromises = cart.map((item) => {
-      return fetch(`http://localhost:5000/cart/${item._id}`, {
-        method: "DELETE",
-      });
-    });
+    Swal.fire({
+      title: "Clear Cart",
+      text: "Are you sure you want to clear your cart?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, clear it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const deletePromises = cart.map((item) => {
+          return fetch(`http://localhost:5000/cart/${item._id}`, {
+            method: "DELETE",
+          });
+        });
 
-    Promise.all(deletePromises)
-      .then((responses) => Promise.all(responses.map((res) => res.json())))
-      .then((data) => {
-        const deletedCount = data.reduce(
-          (sum, response) => sum + response.deletedCount,
-          0
-        );
-        if (deletedCount === cart.length) {
-          refetch();
-        }
-      });
+        Promise.all(deletePromises)
+          .then((responses) => Promise.all(responses.map((res) => res.json())))
+          .then((data) => {
+            const deletedCount = data.reduce(
+              (sum, response) => sum + response.deletedCount,
+              0
+            );
+            if (deletedCount === cart.length) {
+              refetch();
+              Swal.fire({
+                icon: "success",
+                title: "Cart Cleared",
+                text: "Your cart has been cleared.",
+              });
+            }
+          });
+      }
+    });
   };
 
   const groupedItems = cart.reduce((grouped, item) => {
@@ -62,10 +85,7 @@ const Cart = () => {
       {cart.length === 0 ? (
         " "
       ) : (
-        <button
-          className="btn btn-outline"
-          onClick={handleClearCart}
-        >
+        <button className="btn btn-outline" onClick={handleClearCart}>
           Clear Cart
         </button>
       )}
@@ -81,14 +101,19 @@ const Cart = () => {
       ) : (
         <div className="overflow-x-auto w-full">
           <div className="space-y-6">
-            {itemList.map((item, index) => (
+            {itemList.map((item) => (
               <div
                 key={item._id}
-                className="flex items-center bg-white rounded p-4 shadow-md"
+                className={`flex items-center  rounded p-4 shadow-md ${
+                  deletingItemId === item._id ? "deleting" : ""
+                }`}
               >
                 <div className="mr-4">
                   <div className="mask-squircle mask w-12 h-12">
-                    <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                    <img
+                      src={item.image}
+                      alt="Avatar Tailwind CSS Component"
+                    />
                   </div>
                 </div>
                 <div className="flex-grow">
