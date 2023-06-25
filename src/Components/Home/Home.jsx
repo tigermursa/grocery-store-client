@@ -63,7 +63,7 @@ const Home = () => {
         });
     } else {
       Swal.fire({
-        title: "Please login to select",
+        title: "Please login to add items to your cart",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -140,9 +140,9 @@ const Home = () => {
                               className=""
                               onClick={() => handleDelete(cartItem)}
                             >
-                              <FaTrashAlt className="text-2xl text-red-700 ms-4" />
+                              <FaTrashAlt className="text-xl text-red-700 ms-4" />
                             </button>
-                            <span className="text-xs font-bold">
+                            <span className="text-xs font-bold ">
                               {cartItem.quantity}
                             </span>
                           </div>

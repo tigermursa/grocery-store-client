@@ -1,0 +1,19 @@
+.drawer-transition {
+  transition: transform 0.9s ease-in-out;
+}
+
+.drawer-transition-enter {
+  transform: translateX(-100%);
+}
+
+.drawer-transition-enter-active {
+  transform: translateX(0);
+}
+
+.drawer-transition-exit {
+  transform: translateX(0);
+}
+
+.drawer-transition-exit-active {
+  transform: translateX(-100%);
+}
