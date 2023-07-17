@@ -61,9 +61,9 @@ const Navigationbar = () => {
             </button>
 
             <NavLink to="/">
-              <a className="btn btn-ghost normal-case text-white text-3xl font-mono md:hidden">
+              <div className="btn btn-ghost normal-case text-white text-3xl font-mono md:hidden">
                 Grocery Store
-              </a>
+              </div>
             </NavLink>
 
             <div className="dropdown dropdown-end md:hidden">
@@ -71,7 +71,7 @@ const Navigationbar = () => {
                 <div className="indicator">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
+                    className="h-6 w-6 text-white "
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -143,7 +143,7 @@ const Navigationbar = () => {
                   </label>
                 </div>
               </div>
-              <a
+              <div
                 href="#home"
                 className={`block mt-4 ${
                   activeNavItem === "home"
@@ -153,8 +153,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("home")}
               >
                 Home
-              </a>
-              <a
+              </div>
+              <div
                 href="#about"
                 className={`block mt-4 ${
                   activeNavItem === "about"
@@ -164,8 +164,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("about")}
               >
                 About Us
-              </a>
-              <a
+              </div>
+              <div
                 href="#services"
                 className={`block mt-4 ${
                   activeNavItem === "services"
@@ -175,8 +175,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("services")}
               >
                 Services
-              </a>
-              <a
+              </div>
+              <div
                 href="#clients"
                 className={`block mt-4 ${
                   activeNavItem === "clients"
@@ -186,8 +186,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("clients")}
               >
                 Clients
-              </a>
-              <a
+              </div>
+              <div
                 href="#careers"
                 className={`block mt-4 ${
                   activeNavItem === "careers"
@@ -197,8 +197,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("careers")}
               >
                 Careers
-              </a>
-              <a
+              </div>
+              <div
                 href="#blogs"
                 className={`block mt-4 ${
                   activeNavItem === "blogs"
@@ -208,8 +208,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("blogs")}
               >
                 Blogs
-              </a>
-              <a
+              </div>
+              <div
                 href="#contact"
                 className={`block mt-4 ${
                   activeNavItem === "contact"
@@ -219,8 +219,8 @@ const Navigationbar = () => {
                 onClick={() => handleNavItemClick("contact")}
               >
                 Contact Us
-              </a>
-              <a
+              </div>
+              <div
                 href="#logout"
                 className={`block mt-4 ${
                   activeNavItem === "contact"
@@ -234,8 +234,8 @@ const Navigationbar = () => {
                 ) : (
                   " "
                 )}
-              </a>
-              <a
+              </div>
+              <div
                 href="#logout"
                 className={`block mt-4 ${
                   activeNavItem === "contact"
@@ -254,13 +254,13 @@ const Navigationbar = () => {
                 ) : (
                   ""
                 )}
-              </a>
+              </div>
             </div>
           </animated.div>
 
           {/* Desktop Navigation Items */}
           <div className="hidden md:hidden  md:items-center md:justify-end w-full md:w-auto mt-4 md:mt-0 font-semibold me-6  ">
-            <a
+            <div
               href="#home"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "home" ? "text-gray-700" : "text-black"
@@ -268,8 +268,8 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("home")}
             >
               Home
-            </a>
-            <a
+            </div>
+            <div
               href="#about"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "about" ? "text-gray-700" : "text-black"
@@ -277,8 +277,8 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("about")}
             >
               About Us
-            </a>
-            <a
+            </div>
+            <div
               href="#services"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "services" ? "text-gray-700" : "text-black"
@@ -286,8 +286,8 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("services")}
             >
               Services
-            </a>
-            <a
+            </div>
+            <div
               href="#clients"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "clients" ? "text-gray-700" : "text-black"
@@ -295,8 +295,8 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("clients")}
             >
               Clients
-            </a>
-            <a
+            </div>
+            <div
               href="#careers"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "careers" ? "text-gray-700" : "text-black"
@@ -304,8 +304,8 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("careers")}
             >
               Careers
-            </a>
-            <a
+            </div>
+            <div
               href="#blogs"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "blogs" ? "text-gray-700" : "text-black"
@@ -313,8 +313,8 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("blogs")}
             >
               Blogs
-            </a>
-            <a
+            </div>
+            <div
               href="#contact"
               className={`block md:inline-block mt-4 md:mt-0 mr-4 ${
                 activeNavItem === "contact" ? "text-gray-700" : "text-black"
@@ -322,7 +322,7 @@ const Navigationbar = () => {
               onClick={() => handleNavItemClick("contact")}
             >
               Contact Us
-            </a>
+            </div>
           </div>
         </nav>
       </div>
@@ -416,13 +416,13 @@ const Navigationbar = () => {
             {user ? (
               <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                  <a className="justify-between">
+                  <div className="justify-between">
                     Profile
                     <span className="badge">New</span>
-                  </a>
+                  </div>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <div>Settings</div>
                 </li>
                 <li>
                   <NavLink onClick={signOutHandler}>Logout</NavLink>

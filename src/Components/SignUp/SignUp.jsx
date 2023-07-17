@@ -59,7 +59,8 @@ const SignUp = () => {
       const url = await uploadImageToStorage();
       await createUser(email, password, username, url, gender, phone, address);
       setLoading(false);
-      navigate(from) || "/login";
+      navigate("/");
+      
       setPhotoUrl(null);
       const saveUser = {
         name: data.username,

@@ -69,7 +69,7 @@ const AuthProvider = ({ children }) => {
       //token url and axios using
       if (myUsers) {
         axios
-          .post("http://localhost:5000/jwt", { email: myUsers.email })
+          .post("https://successful-hem-boa.cyclic.app/jwt", { email: myUsers.email })
           .then((data) => {
             localStorage.setItem("access-token", data.data.token);
             setLoading(false);

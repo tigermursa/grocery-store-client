@@ -13,7 +13,7 @@ const Cart = () => {
   const handleDelete = (item) => {
     setDeletingItemId(item._id);
 
-    fetch(`http://localhost:5000/cart/${item._id}`, {
+    fetch(`https://successful-hem-boa.cyclic.app/cart/${item._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -37,7 +37,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         const deletePromises = cart.map((item) => {
-          return fetch(`http://localhost:5000/cart/${item._id}`, {
+          return fetch(`https://successful-hem-boa.cyclic.app/cart/${item._id}`, {
             method: "DELETE",
           });
         });
