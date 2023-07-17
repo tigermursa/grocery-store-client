@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaUserCircle, FaAlignJustify, FaRegWindowClose } from "react-icons/fa";
+import { BsShopWindow } from "react-icons/bs";
 import useCart from "../Hooks/useCart";
 import { useSpring, animated } from "react-spring";
 import "./Navigationbar.css";
@@ -39,7 +40,7 @@ const Navigationbar = () => {
     <div className="">
       {/* copy one */}
       <div>
-        <nav className="flex items-center justify-between p-4 md:pt-0  bg-red-700">
+        <nav className="flex items-center justify-between p-4 md:p-0 md:pt-0  bg-red-400">
           {/* Logo */}
           <div className=" items-center md:ms-32 ms-0 hidden">
             <img
@@ -61,8 +62,10 @@ const Navigationbar = () => {
             </button>
 
             <NavLink to="/">
-              <div className="btn btn-ghost normal-case text-white text-3xl font-mono md:hidden">
-                Grocery Store
+              <div className="btn btn-ghost normal-case text-white text-3xl font-thin md:hidden ">
+                <div className="flex items-center gap-2">
+                  <BsShopWindow /> Grocery Store
+                </div>
               </div>
             </NavLink>
 
@@ -110,7 +113,7 @@ const Navigationbar = () => {
 
           {/* Mobile Navigation Drawer */}
           <animated.div
-            className="md:hidden absolute top-0 left-0 h-screen w-3/4 bg-red-600 py-4 px-8"
+            className="md:hidden absolute top-0 left-0 h-screen w-3/4 bg-red-400 py-4 px-8"
             style={menuAnimation}
           >
             <div className="flex justify-end  mb-4">
@@ -327,16 +330,21 @@ const Navigationbar = () => {
         </nav>
       </div>
       {/* main nav */}
-      <div className="navbar bg-red-700">
+      <div className="navbar bg-red-400">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-white text-3xl font-mono hidden md:block">
-            Grocery Store
-          </a>
+          <Link
+            to="/"
+            className="btn btn-ghost normal-case text-white text-3xl font-mono hidden md:block"
+          >
+            <div className="flex items-center gap-2">
+              <BsShopWindow /> Grocery Store
+            </div>
+          </Link>
           <div className="flex-1 flex justify-center items-center pb-4">
             <div className="form-control w-full h-9  mx-auto hidden md:block">
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search items"
                 className="input input-bordered text-center w-10/12"
               />
             </div>

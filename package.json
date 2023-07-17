@@ -12,7 +12,7 @@
   "dependencies": {
     "@tanstack/react-query": "^4.29.15",
     "axios": "^1.4.0",
-    "firebase": "^9.22.2",
+    "firebase": "^10.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react-countup": "^6.3.2",
@@ -20,11 +20,15 @@
     "react-icons": "^4.9.0",
     "react-odometerjs": "^3.1.0",
     "react-query": "^3.39.3",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.13.0",
+    "react-slick": "^0.29.0",
     "react-spring": "^9.7.1",
     "react-transition-group": "^4.4.5",
+    "slick-carousel": "^1.8.1",
     "sort-by": "^0.0.2",
-    "sweetalert2": "^11.4.8"
+    "sweetalert2": "^11.4.8",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
