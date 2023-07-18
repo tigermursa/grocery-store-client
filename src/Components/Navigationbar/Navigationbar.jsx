@@ -346,6 +346,7 @@ const Navigationbar = () => {
                 type="text"
                 placeholder="Search items"
                 className="input input-bordered text-center w-10/12"
+                readOnly
               />
             </div>
           </div>

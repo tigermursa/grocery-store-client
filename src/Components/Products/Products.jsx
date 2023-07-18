@@ -29,6 +29,7 @@ const Products = () => {
   const [deletingItemId, setDeletingItemId] = useState(null);
   const odometerRef = useRef(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleDelete = (item) => {
     setDeletingItemId(item._id);
@@ -112,10 +113,15 @@ const Products = () => {
     setSelectedCategory(category);
   };
 
-  const filteredItems =
-    selectedCategory === "All"
-      ? items
-      : items.filter((item) => item.category === selectedCategory);
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredItems = items.filter((item) =>
+    item.itemName.toLowerCase().includes(searchTerm.toLowerCase())
+  ).filter((item) =>
+    selectedCategory === "All" || item.category === selectedCategory
+  );
 
   return (
     <div className="">
@@ -124,6 +130,15 @@ const Products = () => {
           <div className="md:w-64 w-full bg-gray-200  p-4 font-bold">
             <div className="font-bold bg-gray-200 text-xl mb-2 font-mono">
               Our All Categorys
+            </div>
+            <div className="flex items-center">
+              <input
+                type="text"
+                placeholder="Search items..."
+                value={searchTerm}
+                onChange={handleSearch}
+                className="w-full py-2 mb-2 ps-2 text-sm rounded-md bg-white"
+              />
             </div>
             <button
               className={`w-full py-2 mb-2 ps-2 text-left rounded-md ${

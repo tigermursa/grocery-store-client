@@ -21,63 +21,63 @@ export default function SimpleSlider() {
         <div>
           <img
             className="w-full h-96 object-cover"
-            src="/public/carousel/supermarket-435452_1280.jpg"
+            src="/carousel/supermarket-435452_1280.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-scale-down"
-            src="/public/carousel/pic1.jpg"
+            src="/carousel/pic1.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-scale-down"
-            src="/public/carousel/pic2.jpg"
+            src="/carousel/pic2.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-scale-down"
-            src="/public/carousel/pic3.jpg"
+            src="/carousel/pic3.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-cover"
-            src="/public/carousel/pic8.jpg"
+            src="/carousel/pic8.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-scale-down"
-            src="/public/carousel/pic4.jpg"
+            src="/carousel/pic4.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-scale-down"
-            src="/public/carousel/pic5.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="w-full h-96 object-scale-down"
-            src="/public/carousel/pic6.jpg"
+            src="/carousel/pic5.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="w-full h-96 object-cover"
-            src="/public/carousel/pic7.jpg"
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            className="w-full h-96 object-cover"
+            src="/carousel/pic7.jpg"
             alt=""
           />
         </div>
